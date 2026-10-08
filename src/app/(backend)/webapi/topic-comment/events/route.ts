@@ -10,7 +10,7 @@ import { resolveValidWorkspaceIdFromRequest } from '../../_utils/workspace';
 
 const log = debug('api-route:topic-comment:events');
 
-export const maxDuration = 300;
+export const maxDuration = 60;
 export const runtime = 'nodejs';
 
 const jsonError = (message: string, status: number) =>

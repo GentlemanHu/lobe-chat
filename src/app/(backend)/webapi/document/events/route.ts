@@ -10,7 +10,7 @@ import { resolveValidWorkspaceIdFromRequest } from '../../_utils/workspace';
 const log = debug('api-route:document:events');
 
 // Long-lived SSE; rely on client auto-reconnect + the lock heartbeat across this boundary.
-export const maxDuration = 300;
+export const maxDuration = 60;
 // ioredis (the event transport) requires the Node runtime, not Edge.
 export const runtime = 'nodejs';
 
