@@ -9,6 +9,9 @@ const vercelConfig = {
   outputFileTracingExcludes: {
     '*': [
       'node_modules/.pnpm/@img+sharp-libvips-*musl*',
+      // ffmpeg-static is a 76MB binary only used for video generation (services/generation/video.ts),
+      // incidentally traced into API routes. Excluding saves ~76MB per function.
+      'node_modules/.pnpm/ffmpeg-static*/**',
       // Exclude SPA/desktop/mobile build artifacts from serverless functions
       'public/_spa/**',
       'dist/desktop/**',
